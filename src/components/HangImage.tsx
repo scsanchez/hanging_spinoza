@@ -9,6 +9,7 @@ import image7 from "../assets/7.png";
 import image8 from "../assets/8.png";
 import image9 from "../assets/9.png";
 
+import "./HangImage.scss";
 const images: string[] = [
   image0,
   image1,
@@ -31,7 +32,5 @@ export function HangImage({ imageNumber }: Props) {
     imageNumber = 9;
   }
 
-  return (
-    <img src={images[imageNumber]} alt="Hang image" style={{ width: 250 }} />
-  );
+  return <img className="image" src={images[imageNumber]} alt="Hang image" />;
 }

@@ -72,11 +72,17 @@ function App() {
       {won ? <h2> ¡Felicidades! </h2> : ""}
 
       {/* Botones de letras */}
-      {letters.map((letter) => (
-        <button onClick={() => checkLetter(letter)} key={letter}>
-          {letter}
-        </button>
-      ))}
+      <div className="letters">
+        {letters.map((letter) => (
+          <button
+            className="letter"
+            onClick={() => checkLetter(letter)}
+            key={letter}
+          >
+            {letter}
+          </button>
+        ))}
+      </div>
 
       <br />
       <br />

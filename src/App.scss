@@ -4,3 +4,19 @@
 //   padding: 2rem;
 //   text-align: center;
 // }
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.letters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  .letter {
+    margin: 0.25rem;
+    // align-self: flex-start;
+  }
+}
