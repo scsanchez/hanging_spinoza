@@ -3,7 +3,7 @@ import { letters } from "./helpers/letters";
 import { HangImage } from "./components/HangImage";
 import { getRandomWord } from "./helpers/getRandomWord";
 
-import "./App.css";
+import "./App.scss";
 
 function App() {
   const [word, setWord] = useState(getRandomWord);
@@ -23,7 +23,7 @@ function App() {
     if (currentHiddenWord === word) {
       setWon(true);
     }
-  },);
+  });
 
   const checkLetter = (letter: string) => {
     if (lose) return;
@@ -51,18 +51,18 @@ function App() {
     setAttempts(0);
     setLose(false);
     setWon(false);
-  }
+  };
 
   return (
     <div className="App">
       {/* Shift alt a Imágenes */}
-      <HangImage imageNumber={attempts}/>
+      <HangImage imageNumber={attempts} />
 
       {/* Palabra oculta */}
       <h3>{hiddenWord}</h3>
 
       {/* Contador de intentos */}
-      {attempts ? <h3>Intentos: {attempts}</h3> :""}
+      {attempts ? <h3>Intentos: {attempts}</h3> : ""}
 
       {/* Mensaje si perdió */}
       {lose ? <h2>La palabra era: {word} </h2> : ""}
@@ -77,7 +77,8 @@ function App() {
         </button>
       ))}
 
-      <br/><br/>
+      <br />
+      <br />
       <button onClick={newGame}>¿Nuevo juego?</button>
     </div>
   );
