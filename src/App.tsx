@@ -7,7 +7,7 @@ import "./App.scss";
 
 function App() {
   const [word, setWord] = useState(getRandomWord);
-  const [hiddenWord, setHiddenWord] = useState("_ ".repeat(word.length));
+  const [hiddenWord, setHiddenWord] = useState("_ ".repeat(word.word.length));
   const [attempts, setAttempts] = useState(0);
   const [lose, setLose] = useState(false);
   const [won, setWon] = useState(false);
@@ -20,7 +20,7 @@ function App() {
 
   useEffect(() => {
     const currentHiddenWord = hiddenWord.split(" ").join("");
-    if (currentHiddenWord === word) {
+    if (currentHiddenWord.toLowerCase() === word.word.toLowerCase()) {
       setWon(true);
     }
   });
@@ -28,15 +28,15 @@ function App() {
   const checkLetter = (letter: string) => {
     if (lose) return;
 
-    if (!word.includes(letter)) {
+    if (!word.word.toLowerCase().includes(letter.toLowerCase())) {
       setAttempts(Math.min(attempts + 1, 9));
       return;
     }
 
     const hiddenWordArray = hiddenWord.split(" ");
 
-    for (let i = 0; i < word.length; i++) {
-      if (word[i] === letter) {
+    for (let i = 0; i < word.word.length; i++) {
+      if (word.word[i].toLowerCase() === letter.toLowerCase()) {
         hiddenWordArray[i] = letter;
       }
     }
@@ -47,7 +47,7 @@ function App() {
   const newGame = () => {
     const newWord = getRandomWord();
     setWord(newWord);
-    setHiddenWord("_ ".repeat(newWord.length));
+    setHiddenWord("_ ".repeat(newWord.word.length));
     setAttempts(0);
     setLose(false);
     setWon(false);
@@ -58,6 +58,7 @@ function App() {
       {/* Shift alt a Imágenes */}
       <HangImage imageNumber={attempts} />
 
+      <h4>{word.hint}</h4>
       {/* Palabra oculta */}
       <h3>{hiddenWord}</h3>
 
@@ -65,7 +66,7 @@ function App() {
       {attempts ? <h3>Intentos: {attempts}</h3> : ""}
 
       {/* Mensaje si perdió */}
-      {lose ? <h2>La palabra era: {word} </h2> : ""}
+      {lose ? <h2>La palabra era: {word.word} </h2> : ""}
 
       {/* Mensaje si ganó */}
       {won ? <h2> ¡Felicidades! </h2> : ""}
