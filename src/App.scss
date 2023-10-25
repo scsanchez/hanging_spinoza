@@ -2,13 +2,41 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  .letters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .letter {
+      margin: 0.25rem;
+    }
+  }
 }
 
-.letters {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  .letter {
-    margin: 0.25rem;
+button {
+  background-color: #eee;
+  border: none;
+  padding: 1rem;
+  border-radius: 1rem;
+  color: black;
+  box-shadow: 0 0.2rem #dfd9d9;
+  cursor: pointer;
+
+  &:active {
+    color: white;
+    box-shadow: 0 0.2rem #dfd9d9;
+    transform: translateY(0.2rem);
+  }
+
+  &:hover:not(:disabled) {
+    background: rgb(128, 165, 240);
+    color: white;
+    text-shadow: 0 0.1rem #bcb4b4;
+  }
+
+  &:disabled {
+    cursor: auto;
+    color: grey;
   }
 }
