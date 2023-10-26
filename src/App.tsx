@@ -58,7 +58,9 @@ function App() {
       {/* Shift alt a Imágenes */}
       <HangImage imageNumber={attempts} />
 
-      <h4>{word.hint}</h4>
+      <div className="hint">
+        <h4>{word.hint}</h4>
+      </div>
       {/* Palabra oculta */}
       <h3>{hiddenWord}</h3>
 
