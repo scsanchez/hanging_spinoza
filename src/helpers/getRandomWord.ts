@@ -187,7 +187,7 @@ const words: Word[] = [
   { word: "Apetito", hint: "Por el cual hacemos algo." },
   {
     word: "Virtud",
-    hint: "Esencia o naturaleza del hombre, en cuanto que tiene la potestad de hacer ciertas cosas que se pueden enteder por las solas leyes de su propia naturaleza.",
+    hint: "Esencia o naturaleza del hombre, en cuanto que tiene la potestad de hacer ciertas cosas que se pueden entender por las solas leyes de su propia naturaleza.",
   },
 ];
 
